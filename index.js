@@ -5381,7 +5381,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
         fakeyt(`「 *SELF-MODE* 」`);
         break;
       case "hidetag":
-        if (!mek.key.fromMe) return reply("Khusus Owner 🗿");
+      if (!mek.key.fromMe && !isGroupAdmins) return reply("Only admin");
         if (!isGroup) return reply(mess.only.group);
         var value = args.join(" ");
         var group = await itsmevall.groupMetadata(from);
